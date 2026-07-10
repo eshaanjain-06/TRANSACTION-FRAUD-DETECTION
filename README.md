@@ -1,177 +1,159 @@
-# Fresher Hiring Selection Using Machine Learning
+#  Transaction Fraud Detection using Machine Learning
 
-## 📌 Project Overview
-
-This project develops a **Machine Learning model** to predict whether a fresher candidate is likely to be selected during the recruitment process. The prediction is based on various candidate attributes such as academic performance, technical skills, internship experience, certifications, and communication skills.
-
-The project follows a complete machine learning pipeline, including data preprocessing, exploratory data analysis (EDA), model training, evaluation, and prediction using the **Random Forest Classifier**.
+A machine learning project that predicts whether a bank transaction is fraudulent or legitimate using transaction-related features. The project includes data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and prediction using a **Random Forest Classifier**.
 
 ---
 
-## 🎯 Objective
+##  Project Objective
 
-The primary objective of this project is to build a classification model that can predict the hiring outcome of fresher candidates based on their profile. The system aims to support recruiters by providing faster and more consistent hiring recommendations using machine learning.
-
----
-
-## 📂 Dataset
-
-**Dataset Name:** Fresher Hiring Selection Dataset
-
-**Source:**
-https://github.com/YBIFoundation/MLProjectIdeas
+The objective of this project is to develop a machine learning model capable of identifying fraudulent bank transactions based on customer and transaction details. The model helps improve fraud detection by analyzing transaction patterns and predicting fraudulent activities accurately.
 
 ---
 
-## 🛠️ Technologies Used
+##  Dataset
+
+**Dataset:** Transaction Fraud Detection for SafeBank
+
+**Source:**  
+https://raw.githubusercontent.com/YBIFoundation/MLProjectIdeas/refs/heads/main/Transaction%20Fraud%20Detection%20for%20SafeBank.csv
+
+### Dataset Features
+
+- CustomerID
+- TransactionAmount
+- TransactionTime
+- Location
+- TransactionType
+- AccountAgeMonths
+- BehaviorScore
+- DeviceUsed
+- IsFraud (Target Variable)
+
+---
+
+##  Technologies Used
 
 - Python
-- Google Colab
-- Pandas
 - NumPy
+- Pandas
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- Imbalanced-learn (SMOTE)
 
 ---
 
-## 📚 Python Libraries
+##  Exploratory Data Analysis (EDA)
 
-```python
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-```
+The project includes:
 
----
-
-## 📊 Exploratory Data Analysis (EDA)
-
-The following analyses were performed:
-
-- Dataset Exploration
-- Missing Value Analysis
-- Distribution of Selected Candidates
-- Distribution of Candidate CGPA
-- Boxplots for Numerical Features
+- Dataset exploration
+- Class distribution analysis
+- Boxplots for numerical features
+- Skewness analysis
+- Behavior Score vs Fraud visualization
+- Transaction Type analysis
+- Account Age analysis
+- Distribution of categorical variables
 - Correlation Heatmap
-- Dataset Statistics
 
 ---
 
-## ⚙️ Data Preprocessing
+##  Data Preprocessing
 
-The preprocessing steps include:
+The following preprocessing steps were performed:
 
-- Removing unnecessary columns
-- Handling categorical variables using Label Encoding
-- Feature selection
-- Defining feature and target variables
-- Train-Test Split
-
----
-
-## 🤖 Machine Learning Model
-
-The project uses the **Random Forest Classifier** because it:
-
-- Provides high prediction accuracy
-- Handles multiple input features efficiently
-- Reduces overfitting through ensemble learning
-- Performs well on classification problems
+- Converted `TransactionTime` to datetime format
+- Extracted `TransactionHour`
+- Removed unnecessary columns (`CustomerID`, `TransactionTime`)
+- Label encoded categorical variables
+- Defined feature and target variables
+- Train-test split using stratified sampling
+- Applied **SMOTE** to handle class imbalance
+- Standardized features using `StandardScaler`
 
 ---
 
-## 📈 Model Evaluation
+##  Machine Learning Model
 
-The trained model is evaluated using:
+**Algorithm Used**
 
-- Accuracy Score
+- Random Forest Classifier
+
+### Why Random Forest?
+
+- Handles classification problems effectively
+- Works well with numerical and categorical features
+- Reduces overfitting using ensemble learning
+- Provides stable and reliable predictions
+
+---
+
+##  Model Evaluation
+
+The model was evaluated using:
+
+- Accuracy
 - Precision
 - Recall
-- F1-Score
+- F1 Score
+- ROC-AUC Score
 - Confusion Matrix
 - Classification Report
 
 ---
 
-## 📁 Project Structure
+##  Project Workflow
 
-```
-Fresher-Hiring-Selection-ML/
-│
-├── Fresher_Hiring_Selection.ipynb
-├── README.md
-├── requirements.txt
-├── report/
-│   └── Project_Report.pdf
-└── images/
-    ├── selected_distribution.png
-    ├── cgpa_distribution.png
-    ├── correlation_heatmap.png
-    └── confusion_matrix.png
-```
-
----
-
-## 🚀 Workflow
-
-```
-Dataset
-   │
-   ▼
+```text
+Import Dataset
 Data Exploration
-   │
-   ▼
-Data Visualization
-   │
-   ▼
+Exploratory Data Analysis      ▼
 Data Preprocessing
-   │
-   ▼
+Feature Engineering
 Train-Test Split
-   │
-   ▼
+SMOTE Oversampling
+Feature Scaling
 Random Forest Training
-   │
-   ▼
 Model Evaluation
-   │
-   ▼
 Prediction
 ```
 
 ---
 
-## 📌 Results
+## Repository Structure
 
-The Random Forest Classifier successfully predicts whether a candidate is likely to be selected based on multiple academic and technical attributes. The model was evaluated using standard classification metrics and demonstrated reliable performance for this dataset.
+```
+Transaction-Fraud-Detection/
+│
+├── Transaction_Fraud_Detection.ipynb
+├── README.md
+├── requirements.txt
+├── images/
+│   ├── class_distribution.png
+│   ├── correlation_heatmap.png
+│   ├── boxplots.png
+│   └── behavior_score_vs_fraud.png
+└── report/
+    └── Transaction_Fraud_Report.pdf
+```
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
-- Compare multiple machine learning algorithms
-- Perform Hyperparameter Tuning
-- Deploy using Streamlit or Flask
-- Add Resume Parsing using NLP
-- Integrate with a Recruitment Management System
-- Train on larger real-world datasets
+- Compare additional machine learning algorithms such as XGBoost, LightGBM, and CatBoost.
+- Perform hyperparameter tuning for better performance.
+- Build a real-time fraud detection API using Flask or FastAPI.
+- Deploy the model using Streamlit for interactive predictions.
+- Use Explainable AI techniques such as SHAP or LIME for model interpretation.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Eshaan Jain**
 
 B.Tech Artificial Intelligence & Machine Learning
 
-GitHub: https://github.com/eshaanjain-06
-
-LinkedIn: *(Add your LinkedIn profile link here)*
-
----
-
-## ⭐ If you found this project useful, consider giving it a star!
+Passionate about Machine Learning, Data Analytics, and Artificial Intelligence.
